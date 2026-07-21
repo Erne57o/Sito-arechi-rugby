@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arechi Rugby — Salerno</title>
+<meta name="description" content="Arechi Rugby, Salerno. Storia, squadra, calendario partite e tesseramenti.">
+<link rel="icon" type="image/png" href="arechi-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;900&family=UnifrakturCook:wght@700&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#111c33;
+    --navy-2:#1c2c4d;
+    --navy-3:#233863;
+    --blue-crest:#2c5aa0;
+    --red-crest:#c41e3a;
+    --red-deep:#8f1526;
+    --gold:#f0b429;
+    --gold-soft:#e4c977;
+    --parchment:#f2ecdd;
+    --ink:#0d1220;
+    --stone:#9aa4bd;
+    --stone-dark:#6b7592;
+    --radius:6px;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--navy);
+    color:var(--parchment);
+    font-family:'Barlow',sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Cinzel',serif;
+    letter-spacing:.02em;
+    margin:0 0 .4em 0;
+    color:var(--gold);
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    font-family:'UnifrakturCook',cursive;
+    font-size:1.4rem;
+    color:var(--red-crest);
+    letter-spacing:.03em;
+    display:inline-block;
+    margin-bottom:.3em;
+  }
+  :focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
+
+  /* ---- tri-color shield bar ---- */
+  .shieldbar{
+    height:6px;
+    width:100%;
+    background:linear-gradient(90deg,
+      var(--blue-crest) 0 33.3%,
+      var(--red-crest) 33.3% 66.6%,
+      var(--gold) 66.6% 100%);
+  }
+
+  /* ---- header ---- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(17,28,51,.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(240,180,41,.18);
+  }
+  .navrow{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:12px 24px;
+  }
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
+  .brand img{height:48px;width:auto;}
+  .brand-text{font-family:'Cinzel',serif;font-weight:700;color:var(--parchment);font-size:1.05rem;line-height:1.1;}
+  .brand-text small{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:.68rem;letter-spacing:.15em;color:var(--stone);text-transform:uppercase;}
+  nav ul{list-style:none;display:flex;gap:28px;margin:0;padding:0;}
+  nav a{
+    text-decoration:none;color:var(--parchment);
+    font-family:'Barlow Condensed',sans-serif;font-weight:600;
+    font-size:.95rem;letter-spacing:.06em;text-transform:uppercase;
+    padding:6px 2px;border-bottom:2px solid transparent;
+    transition:border-color .2s, color .2s;
+  }
+  nav a:hover{border-color:var(--gold);color:var(--gold);}
+  .menu-btn{display:none;background:none;border:1px solid var(--gold-soft);color:var(--gold-soft);padding:8px 10px;border-radius:var(--radius);cursor:pointer;}
+  @media(max-width:860px){
+    nav{position:fixed;top:76px;left:0;right:0;background:var(--navy-2);border-bottom:1px solid rgba(240,180,41,.2);
+      max-height:0;overflow:hidden;transition:max-height .3s ease;}
+    nav.open{max-height:400px;}
+    nav ul{flex-direction:column;padding:16px 24px;gap:0;}
+    nav ul li{border-bottom:1px solid rgba(255,255,255,.06);}
+    nav a{display:block;padding:14px 4px;}
+    .menu-btn{display:block;}
+  }
+
+  /* ---- hero ---- */
+  .hero{
+    position:relative;
+    padding:64px 24px 0;
+    background:
+      radial-gradient(ellipse at 50% -10%, rgba(44,90,160,.35), transparent 60%),
+      linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 100%);
+    overflow:hidden;
+    text-align:center;
+  }
+  .hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:2;}
+  .hero img.crest{width:200px;margin:0 auto 22px;filter:drop-shadow(0 12px 28px rgba(0,0,0,.45));}
+  .hero h1{font-size:clamp(2.2rem,6vw,3.6rem);margin-bottom:.15em;color:var(--parchment);}
+  .hero h1 span{color:var(--gold);}
+  .hero p.tagline{
+    font-family:'Barlow Condensed',sans-serif;font-weight:500;
+    font-size:1.2rem;letter-spacing:.04em;color:var(--stone);
+    max-width:520px;margin:0 auto 32px;
+  }
+  .cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:56px;}
+  .btn{
+    display:inline-block;padding:13px 28px;border-radius:var(--radius);
+    font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;
+    letter-spacing:.08em;font-size:.9rem;text-decoration:none;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--gold);color:var(--ink);box-shadow:0 6px 18px rgba(240,180,41,.25);}
+  .btn-ghost{border:1.5px solid var(--gold-soft);color:var(--gold-soft);}
+
+  /* castle skyline silhouette at base of hero */
+  .skyline{
+    display:block;width:100%;height:auto;color:var(--navy-3);
+  }
+
+  /* battlement divider */
+  .battlement{display:block;width:100%;height:22px;}
+
+  /* ---- sections ---- */
+  section{padding:72px 24px;}
+  .section-head{max-width:640px;margin:0 auto 44px;text-align:center;}
+  .section-head h2{font-size:clamp(1.7rem,4vw,2.3rem);}
+  .section-head p{color:var(--stone);font-size:1.05rem;}
+
+  .bg-navy2{background:var(--navy-2);}
+  .bg-navy{background:var(--navy);}
+
+  /* chi siamo */
+  .chisiamo-grid{
+    display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;
+    max-width:var(--maxw);margin:0 auto;
+  }
+  .chisiamo-grid p{color:var(--parchment);opacity:.92;}
+  .fact-list{list-style:none;margin:24px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .fact-list li{
+    background:rgba(240,180,41,.06);border:1px solid rgba(240,180,41,.2);
+    border-radius:var(--radius);padding:14px 16px;
+  }
+  .fact-list strong{display:block;font-family:'Cinzel',serif;color:var(--gold);font-size:1.3rem;}
+  .fact-list span{font-size:.85rem;color:var(--stone);}
+  .castle-art{
+    border-radius:var(--radius);overflow:hidden;border:1px solid rgba(240,180,41,.25);
+    background:linear-gradient(160deg, var(--navy-3), var(--navy));
+    aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;
+  }
+  @media(max-width:860px){.chisiamo-grid{grid-template-columns:1fr;} .fact-list{grid-template-columns:1fr 1fr;}}
+
+  /* squadra */
+  .roster-tabs{display:flex;gap:10px;justify-content:center;margin-bottom:36px;flex-wrap:wrap;}
+  .roster-tab{
+    font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+    font-size:.85rem;padding:9px 18px;border-radius:999px;border:1px solid rgba(240,180,41,.3);
+    background:transparent;color:var(--stone);cursor:pointer;
+  }
+  .roster-tab.active{background:var(--gold);color:var(--ink);border-color:var(--gold);}
+  .roster-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:18px;max-width:var(--maxw);margin:0 auto;}
+  .player-card{
+    background:var(--navy-3);border:1px solid rgba(240,180,41,.16);border-radius:var(--radius);
+    padding:20px 16px;text-align:center;position:relative;
+  }
+  .player-card .num{
+    font-family:'Cinzel',serif;font-size:2.1rem;color:var(--gold);line-height:1;
+  }
+  .player-card .name{font-weight:700;margin-top:8px;}
+  .player-card .role{font-size:.8rem;color:var(--stone);text-transform:uppercase;letter-spacing:.06em;}
+  .placeholder-note{
+    text-align:center;color:var(--stone-dark);font-size:.85rem;margin-top:28px;font-style:italic;
+  }
+
+  /* calendario */
+  .fixtures{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:2px;}
+  .fixture{
+    display:grid;grid-template-columns:90px 1fr auto;gap:16px;align-items:center;
+    background:var(--navy-3);padding:16px 20px;border-left:3px solid var(--gold);
+  }
+  .fixture.away{border-left-color:var(--blue-crest);}
+  .fixture .date{font-family:'Barlow Condensed',sans-serif;font-weight:700;color:var(--gold);}
+  .fixture .date small{display:block;font-weight:500;color:var(--stone);font-size:.7rem;text-transform:uppercase;}
+  .fixture .match{font-family:'Cinzel',serif;font-size:1rem;}
+  .fixture .match .vs{color:var(--stone);font-family:'Barlow',sans-serif;font-size:.85rem;margin:0 8px;}
+  .tag{
+    font-family:'Barlow Condensed',sans-serif;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;
+    padding:5px 10px;border-radius:999px;white-space:nowrap;
+  }
+  .tag.casa{background:rgba(240,180,41,.15);color:var(--gold);}
+  .tag.trasferta{background:rgba(44,90,160,.25);color:#8fb3e8;}
+  @media(max-width:640px){.fixture{grid-template-columns:1fr;text-align:left;gap:6px;}}
+
+  /* news */
+  .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:var(--maxw);margin:0 auto;}
+  .news-card{background:var(--navy-3);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(240,180,41,.14);}
+  .news-thumb{aspect-ratio:16/10;background:linear-gradient(140deg,var(--blue-crest),var(--navy));}
+  .news-body{padding:18px 20px;}
+  .news-date{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--red-crest);font-weight:700;}
+  .news-body h3{font-family:'Cinzel',serif;font-size:1.05rem;margin:.4em 0;color:var(--parchment);}
+  .news-body p{color:var(--stone);font-size:.92rem;margin:0;}
+  @media(max-width:860px){.news-grid{grid-template-columns:1fr;}}
+
+  /* sponsor */
+  .sponsor-strip{
+    display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap;
+    max-width:var(--maxw);margin:0 auto;opacity:.85;
+  }
+  .sponsor-slot{
+    width:140px;height:64px;border:1px dashed rgba(240,180,41,.35);border-radius:var(--radius);
+    display:flex;align-items:center;justify-content:center;color:var(--stone-dark);
+    font-family:'Barlow Condensed',sans-serif;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;
+  }
+
+  /* contatti */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:var(--maxw);margin:0 auto;}
+  .info-block{margin-bottom:22px;}
+  .info-block h3{font-size:1rem;color:var(--gold);font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.08em;}
+  .info-block p{margin:.2em 0;color:var(--parchment);opacity:.9;}
+  form{display:flex;flex-direction:column;gap:14px;}
+  form input, form textarea{
+    background:var(--navy-3);border:1px solid rgba(240,180,41,.25);border-radius:var(--radius);
+    padding:12px 14px;color:var(--parchment);font-family:'Barlow',sans-serif;font-size:.95rem;
+  }
+  form input:focus, form textarea:focus{border-color:var(--gold);outline:none;}
+  form label{font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--stone);margin-bottom:-6px;}
+  form button{align-self:flex-start;}
+  @media(max-width:860px){.contact-grid{grid-template-columns:1fr;}}
+
+  footer{background:var(--ink);padding:40px 24px 28px;text-align:center;color:var(--stone-dark);}
+  .footer-brand{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:14px;}
+  .footer-brand img{height:36px;}
+  .footer-brand span{font-family:'Cinzel',serif;color:var(--parchment);}
+  .social-row{display:flex;justify-content:center;gap:18px;margin:16px 0;}
+  .social-row a{
+    width:36px;height:36px;border:1px solid rgba(240,180,41,.3);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--gold-soft);
+    font-size:.85rem;
+  }
+  footer p{font-size:.82rem;margin:.3em 0;}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .btn:hover{transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shieldbar"></div>
+  <div class="navrow">
+    <a href="#top" class="brand">
+      <img src="arechi-logo.png" alt="Stemma Arechi Rugby">
+      <span class="brand-text">Arechi Rugby<small>A.S.D. — Salerno</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Apri menu" aria-expanded="false">☰ Menu</button>
+    <nav id="mainNav">
+      <ul>
+        <li><a href="#chisiamo">Chi Siamo</a></li>
+        <li><a href="#squadra">Squadra</a></li>
+        <li><a href="#calendario">Calendario</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#sponsor">Sponsor</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div id="top"></div>
+
+<section class="hero">
+  <div class="hero-inner">
+    <img src="arechi-logo.png" alt="Stemma Arechi Rugby" class="crest">
+    <h1>Arechi <span>Rugby</span></h1>
+    <p class="tagline">Dal cuore di Salerno, sotto le mura del principe. Forza del branco, memoria della città.</p>
+    <div class="cta-row">
+      <a href="#contatti" class="btn btn-primary">Vieni a provare</a>
+      <a href="#calendario" class="btn btn-ghost">Prossime partite</a>
+    </div>
+  </div>
+  <svg class="skyline" viewBox="0 0 1200 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M0,90 L0,60 L20,60 L20,45 L35,45 L35,60 L55,60 L55,30 L70,30 L70,20 L85,20 L85,30 L100,30 L100,60
+      L160,60 L160,40 L175,40 L175,25 L190,25 L190,40 L205,40 L205,60 L260,60 L260,50 L275,50 L275,35 L290,35 L290,50
+      L305,50 L305,60 L400,60 L400,45 L900,45 L900,58 L960,58 L960,42 L975,42 L975,30 L990,30 L990,42 L1005,42 L1005,58
+      L1080,58 L1080,48 L1095,48 L1095,33 L1110,33 L1110,48 L1125,48 L1125,58 L1200,58 L1200,90 Z"/>
+  </svg>
+</section>
+
+<svg class="battlement" viewBox="0 0 400 20" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="merlonGold" width="40" height="20" patternUnits="userSpaceOnUse">
+      <rect x="0" y="10" width="40" height="10" style="fill:var(--navy-2)"/>
+      <rect x="0" y="0" width="16" height="10" style="fill:var(--navy-2)"/>
+      <rect x="24" y="0" width="16" height="10" style="fill:var(--navy-2)"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="20" fill="url(#merlonGold)"/>
+</svg>
+
+<section class="bg-navy2" id="chisiamo">
+  <div class="chisiamo-grid">
+    <div>
+      <span class="eyebrow">Chi siamo</span>
+      <h2>Una città, uno scudo, una meta</h2>
+      <p>Arechi Rugby nasce a Salerno per portare il gioco della palla ovale sotto le mura del Castello che dà il nome al club. Come il principe longobardo Arechi II fortificò la città, la nostra squadra costruisce ogni stagione mattone su mattone: allenamento, disciplina e squadra prima di tutto.</p>
+      <p>Il drago dello stemma custodisce la meta come il castello custodiva Salerno: con la testa alta e il fiato corto degli avversari. Giochiamo un rugby fatto di mischia solida, difesa che non arretra e un pack che non conosce paura.</p>
+      <ul class="fact-list">
+        <li><strong>2019</strong><span>Anno di fondazione</span></li>
+        <li><strong>3</strong><span>Squadre giovanili</span></li>
+        <li><strong>1</strong><span>Prima squadra Serie C</span></li>
+        <li><strong>Salerno</strong><span>Sede e campo di gioco</span></li>
+      </ul>
+    </div>
+    <div class="castle-art">
+      <img src="arechi-logo.png" alt="Stemma Arechi Rugby" style="width:55%;">
+    </div>
+  </div>
+</section>
+
+<svg class="battlement" viewBox="0 0 400 20" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="merlonNavy" width="40" height="20" patternUnits="userSpaceOnUse">
+      <rect x="0" y="10" width="40" height="10" style="fill:var(--navy)"/>
+      <rect x="0" y="0" width="16" height="10" style="fill:var(--navy)"/>
+      <rect x="24" y="0" width="16" height="10" style="fill:var(--navy)"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="20" fill="url(#merlonNavy)"/>
+</svg>
+
+<section class="bg-navy" id="squadra">
+  <div class="section-head">
+    <span class="eyebrow">La rosa</span>
+    <h2>La Squadra</h2>
+    <p>Il pack e i trequarti che difendono i colori blu, rosso e oro. Sostituisci queste schede con la tua rosa reale.</p>
+  </div>
+  <div class="roster-tabs">
+    <button class="roster-tab active">Prima Squadra</button>
+    <button class="roster-tab">Under 18</button>
+    <button class="roster-tab">Staff Tecnico</button>
+  </div>
+  <div class="roster-grid">
+    <div class="player-card"><div class="num">1</div><div class="name">Nome Cognome</div><div class="role">Pilone</div></div>
+    <div class="player-card"><div class="num">2</div><div class="name">Nome Cognome</div><div class="role">Tallonatore</div></div>
+    <div class="player-card"><div class="num">8</div><div class="name">Nome Cognome</div><div class="role">Numero 8</div></div>
+    <div class="player-card"><div class="num">9</div><div class="name">Nome Cognome</div><div class="role">Mediano di mischia</div></div>
+    <div class="player-card"><div class="num">10</div><div class="name">Nome Cognome</div><div class="role">Apertura</div></div>
+    <div class="player-card"><div class="num">15</div><div class="name">Nome Cognome</div><div class="role">Estremo</div></div>
+  </div>
+  <p class="placeholder-note">Schede di esempio — aggiorna numeri, nomi e ruoli con la rosa attuale.</p>
+</section>
+
+<svg class="battlement" viewBox="0 0 400 20" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="merlonNavy2" width="40" height="20" patternUnits="userSpaceOnUse">
+      <rect x="0" y="10" width="40" height="10" style="fill:var(--navy-2)"/>
+      <rect x="0" y="0" width="16" height="10" style="fill:var(--navy-2)"/>
+      <rect x="24" y="0" width="16" height="10" style="fill:var(--navy-2)"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="20" fill="url(#merlonNavy2)"/>
+</svg>
+
+<section class="bg-navy2" id="calendario">
+  <div class="section-head">
+    <span class="eyebrow">Stagione 2026/27</span>
+    <h2>Calendario Partite</h2>
+    <p>Prossimi impegni di campionato. Date di esempio — collega qui il calendario federale reale.</p>
+  </div>
+  <div class="fixtures">
+    <div class="fixture">
+      <div class="date">14 SET<small>2026</small></div>
+      <div class="match">Arechi Rugby <span class="vs">vs</span> Draghi Benevento</div>
+      <span class="tag casa">Casa</span>
+    </div>
+    <div class="fixture away">
+      <div class="date">28 SET<small>2026</small></div>
+      <div class="match">Cinghiali Avellino <span class="vs">vs</span> Arechi Rugby</div>
+      <span class="tag trasferta">Trasferta</span>
+    </div>
+    <div class="fixture">
+      <div class="date">12 OTT<small>2026</small></div>
+      <div class="match">Arechi Rugby <span class="vs">vs</span> Lupi Caserta</div>
+      <span class="tag casa">Casa</span>
+    </div>
+    <div class="fixture away">
+      <div class="date">26 OTT<small>2026</small></div>
+      <div class="match">Aquile Napoli <span class="vs">vs</span> Arechi Rugby</div>
+      <span class="tag trasferta">Trasferta</span>
+    </div>
+  </div>
+  <p class="placeholder-note">Partite di esempio — sostituisci con il calendario federale ufficiale.</p>
+</section>
+
+<svg class="battlement" viewBox="0 0 400 20" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="merlonNavy3" width="40" height="20" patternUnits="userSpaceOnUse">
+      <rect x="0" y="10" width="40" height="10" style="fill:var(--navy)"/>
+      <rect x="0" y="0" width="16" height="10" style="fill:var(--navy)"/>
+      <rect x="24" y="0" width="16" height="10" style="fill:var(--navy)"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="20" fill="url(#merlonNavy3)"/>
+</svg>
+
+<section class="bg-navy" id="news">
+  <div class="section-head">
+    <span class="eyebrow">Dal campo</span>
+    <h2>News</h2>
+    <p>Ultime dal club. Aggiorna con i risultati e le notizie reali della squadra.</p>
+  </div>
+  <div class="news-grid">
+    <div class="news-card">
+      <div class="news-thumb"></div>
+      <div class="news-body">
+        <div class="news-date">Esempio — 10 Set 2026</div>
+        <h3>Aperti i tesseramenti 2026/27</h3>
+        <p>Da settembre riprendono gli allenamenti per tutte le categorie. Vieni a provare gratis.</p>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="news-thumb"></div>
+      <div class="news-body">
+        <div class="news-date">Esempio — 3 Set 2026</div>
+        <h3>Nuovo staff tecnico per la stagione</h3>
+        <p>Presentato il nuovo staff che guiderà la prima squadra nel prossimo campionato.</p>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="news-thumb"></div>
+      <div class="news-body">
+        <div class="news-date">Esempio — 20 Ago 2026</div>
+        <h3>Ritiro estivo concluso</h3>
+        <p>Si chiude il ritiro pre-campionato: gruppo compatto e pronto alla nuova annata.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-navy2" id="sponsor">
+  <div class="section-head">
+    <span class="eyebrow">Grazie</span>
+    <h2>I Nostri Sponsor</h2>
+    <p>Aggiungi qui i loghi dei partner che sostengono il club.</p>
+  </div>
+  <div class="sponsor-strip">
+    <div class="sponsor-slot">Logo Sponsor</div>
+    <div class="sponsor-slot">Logo Sponsor</div>
+    <div class="sponsor-slot">Logo Sponsor</div>
+    <div class="sponsor-slot">Logo Sponsor</div>
+  </div>
+</section>
+
+<section class="bg-navy" id="contatti">
+  <div class="section-head">
+    <span class="eyebrow">Unisciti a noi</span>
+    <h2>Contatti & Iscrizioni</h2>
+    <p>Scrivici per una prova gratuita o per informazioni su tesseramento e settore giovanile.</p>
+  </div>
+  <div class="contact-grid">
+    <div>
+      <div class="info-block">
+        <h3>Dove siamo</h3>
+        <p>Campo Sportivo, Salerno (SA)</p>
+      </div>
+      <div class="info-block">
+        <h3>Contatti</h3>
+        <p>info@arechirugby.it</p>
+        <p>+39 000 000 0000</p>
+      </div>
+      <div class="info-block">
+        <h3>Orari allenamenti</h3>
+        <p>Martedì e Giovedì, 19:00 — 21:00</p>
+      </div>
+    </div>
+    <form onsubmit="event.preventDefault(); alert('Form di esempio: collega un servizio come Formspree o un backend per ricevere davvero i messaggi.');">
+      <div>
+        <label for="nome">Nome e Cognome</label>
+        <input id="nome" type="text" required>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" type="email" required>
+      </div>
+      <div>
+        <label for="msg">Messaggio</label>
+        <textarea id="msg" rows="4"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Invia richiesta</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">
+    <img src="arechi-logo.png" alt="Stemma Arechi Rugby">
+    <span>Arechi Rugby A.S.D.</span>
+  </div>
+  <div class="social-row">
+    <a href="#" aria-label="Instagram">IG</a>
+    <a href="#" aria-label="Facebook">FB</a>
+    <a href="#" aria-label="YouTube">YT</a>
+  </div>
+  <p>© 2026 Arechi Rugby A.S.D. — Salerno. Tutti i diritti riservati.</p>
+  <p>P.IVA / C.F. da inserire</p>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const nav = document.getElementById('mainNav');
+  menuBtn.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', isOpen);
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', false);
+  }));
+
+  const tabs = document.querySelectorAll('.roster-tab');
+  tabs.forEach(tab => tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+  }));
+</script>
+
+</body>
+</html>
