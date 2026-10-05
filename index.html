@@ -3,12 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arechi Rugby — Salerno</title>
-<meta name="description" content="Arechi Rugby, Salerno. Storia, squadra, calendario partite e tesseramenti.">
+<title>Arechi Rugby — Rugby Salerno | A.S.D. dal 2012, Stadio Donato Vestuti</title>
+<meta name="description" content="Arechi Rugby: squadra di rugby a Salerno, Serie C. Partite casalinghe allo Stadio Donato Vestuti. Storia, squadra, calendario e tesseramenti per il settore giovanile e seniores.">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="rugby Salerno, Salerno rugby, Arechi Rugby, Stadio Vestuti, Stadio Donato Vestuti, rugby Campania, A.S.D. rugby Salerno">
+<link rel="canonical" href="https://arechirugby.it/">
 <link rel="icon" type="image/png" href="arechi-logo.png">
+<link rel="apple-touch-icon" href="arechi-logo.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Arechi Rugby">
+<meta property="og:locale" content="it_IT">
+<meta property="og:url" content="https://arechirugby.it/">
+<meta property="og:title" content="Arechi Rugby — Rugby Salerno | A.S.D. dal 2012">
+<meta property="og:description" content="Squadra di rugby a Salerno, Serie C. Partite casalinghe allo Stadio Donato Vestuti. Storia, squadra, calendario e tesseramenti.">
+<meta property="og:image" content="https://arechirugby.it/arechi-logo.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Arechi Rugby — Rugby Salerno">
+<meta name="twitter:description" content="Squadra di rugby a Salerno, Serie C. Partite casalinghe allo Stadio Donato Vestuti.">
+<meta name="twitter:image" content="https://arechirugby.it/arechi-logo.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;900&family=UnifrakturCook:wght@700&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsTeam",
+  "name": "Arechi Rugby",
+  "alternateName": "A.S.D. Arechi Rugby",
+  "sport": "Rugby",
+  "url": "https://arechirugby.it/",
+  "logo": "https://arechirugby.it/arechi-logo.png",
+  "foundingDate": "2012",
+  "email": "cmsa.arechirugby@federugby.it",
+  "telephone": "+39-089-258-0415",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Corso Garibaldi 103",
+    "addressLocality": "Salerno",
+    "postalCode": "84123",
+    "addressRegion": "SA",
+    "addressCountry": "IT"
+  },
+  "location": {
+    "@type": "StadiumOrArena",
+    "name": "Stadio Donato Vestuti",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Piazza Renato Casalbore",
+      "addressLocality": "Salerno",
+      "addressRegion": "SA",
+      "addressCountry": "IT"
+    }
+  },
+  "sameAs": [
+    "https://www.facebook.com/arechirugby/",
+    "https://www.instagram.com/arechirugby/",
+    "https://www.tiktok.com/@arechirugby"
+  ]
+}
+</script>
 <style>
   :root{
     --navy:#111c33;
@@ -223,13 +282,14 @@
 
   /* sponsor */
   .sponsor-strip{
-    display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap;
-    max-width:var(--maxw);margin:0 auto;opacity:.85;
+    display:flex;justify-content:center;align-items:center;gap:40px;flex-wrap:wrap;
+    max-width:var(--maxw);margin:0 auto;
   }
   .sponsor-slot{
-    width:140px;height:64px;border:1px dashed rgba(240,180,41,.35);border-radius:var(--radius);
-    display:flex;align-items:center;justify-content:center;color:var(--stone-dark);
-    font-family:'Barlow Condensed',sans-serif;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .sponsor-slot img{
+    max-height:72px;max-width:180px;width:auto;height:auto;object-fit:contain;
   }
 
   /* contatti */
@@ -237,6 +297,8 @@
   .info-block{margin-bottom:22px;}
   .info-block h3{font-size:1rem;color:var(--gold);font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.08em;}
   .info-block p{margin:.2em 0;color:var(--parchment);opacity:.9;}
+  .info-block a{color:var(--gold-soft);text-decoration:none;border-bottom:1px solid rgba(240,180,41,.35);}
+  .info-block a:hover{color:var(--gold);border-color:var(--gold);}
   form{display:flex;flex-direction:column;gap:14px;}
   form input, form textarea{
     background:var(--navy-3);border:1px solid rgba(240,180,41,.25);border-radius:var(--radius);
@@ -293,8 +355,9 @@
 <section class="hero">
   <div class="hero-inner">
     <img src="arechi-logo.png" alt="Stemma Arechi Rugby" class="crest">
+    <span class="eyebrow">Rugby a Salerno dal 2012</span>
     <h1>Arechi <span>Rugby</span></h1>
-    <p class="tagline">Dal cuore di Salerno, sotto le mura del principe.</p>
+    <p class="tagline">Dal cuore di Salerno, sotto le mura del principe. Le partite casalinghe si giocano allo Stadio Donato Vestuti.</p>
     <div class="cta-row">
       <a href="#contatti" class="btn btn-primary">Vieni a provare</a>
       <a href="#calendario" class="btn btn-ghost">Prossime partite</a>
@@ -387,7 +450,7 @@
   <div class="section-head">
     <span class="eyebrow">Stagione 2026/27 — Serie C, Prima fase C.O. Campania</span>
     <h2>Calendario Partite</h2>
-    <p>I cinque turni del girone d'andata della prima fase regionale.</p>
+    <p>Girone unico a 6 squadre, andata e ritorno — dieci giornate.</p>
   </div>
   <div class="fixtures">
     <div class="fixture away">
@@ -425,8 +488,42 @@
       </div>
       <span class="tag trasferta">Trasferta</span>
     </div>
+    <div class="fixture">
+      <div class="date">13 DIC<small>2026</small></div>
+      <div class="match"><img class="crest-sm" src="arechi-logo.png" alt="">Arechi Rugby <span class="vs">vs</span> <img class="crest-sm" src="Loghi/ASD HAMMERS RUGBY CAMPOBASSO.png" alt="">Hammers Rugby Campobasso
+        <small class="venue">ore 14:30 — Stadio Donato Vestuti, Salerno</small>
+      </div>
+      <span class="tag casa">Casa</span>
+    </div>
+    <div class="fixture away">
+      <div class="date">20 DIC<small>2026</small></div>
+      <div class="match"><img class="crest-sm" src="Loghi/RNA SSD A R.L.png" alt="">RNA SSD a r.l. <span class="vs">vs</span> <img class="crest-sm" src="arechi-logo.png" alt="">Arechi Rugby
+        <small class="venue">ore 14:30 — Villaggio del Rugby (ex NATO), Napoli</small>
+      </div>
+      <span class="tag trasferta">Trasferta</span>
+    </div>
+    <div class="fixture">
+      <div class="date">10 GEN<small>2027</small></div>
+      <div class="match"><img class="crest-sm" src="arechi-logo.png" alt="">Arechi Rugby <span class="vs">vs</span> <img class="crest-sm" src="Loghi/RUGBY CLAN S. MARIA C.V. ASD.png" alt="">Rugby Clan S. Maria C.V.
+        <small class="venue">ore 14:30 — Stadio Donato Vestuti, Salerno</small>
+      </div>
+      <span class="tag casa">Casa</span>
+    </div>
+    <div class="fixture away">
+      <div class="date">17 GEN<small>2027</small></div>
+      <div class="match"><img class="crest-sm" src="Loghi/ASD RUGBY COSENZA.png" alt="">Rugby Cosenza <span class="vs">vs</span> <img class="crest-sm" src="arechi-logo.png" alt="">Arechi Rugby
+        <small class="venue">ore 14:30 — Campo Mazzuca Marchesino, Rende (CS)</small>
+      </div>
+      <span class="tag trasferta">Trasferta</span>
+    </div>
+    <div class="fixture">
+      <div class="date">24 GEN<small>2027</small></div>
+      <div class="match"><img class="crest-sm" src="arechi-logo.png" alt="">Arechi Rugby <span class="vs">vs</span> <img class="crest-sm" src="Loghi/Salerno Rugby.png" alt="">Associazione Sportiva Salerno Rugby
+        <small class="venue">ore 14:30 — Stadio Donato Vestuti, Salerno</small>
+      </div>
+      <span class="tag casa">Casa</span>
+    </div>
   </div>
-  <p class="placeholder-note">Date di recupero fissate dalla federazione in caso di rinvio: 13/12, 20/12/2026, 10/01, 17/01, 24/01/2027.</p>
 </section>
 
 <svg class="battlement" viewBox="0 0 400 20" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -478,13 +575,18 @@
   <div class="section-head">
     <span class="eyebrow">Grazie</span>
     <h2>I Nostri Sponsor</h2>
-    <p>Aggiungi qui i loghi dei partner che sostengono il club.</p>
+    <p>I partner che sostengono il club.</p>
   </div>
   <div class="sponsor-strip">
-    <div class="sponsor-slot">Logo Sponsor</div>
-    <div class="sponsor-slot">Logo Sponsor</div>
-    <div class="sponsor-slot">Logo Sponsor</div>
-    <div class="sponsor-slot">Logo Sponsor</div>
+    <div class="sponsor-slot"><img src="Sponsor/Avicola Montalbino.png" alt="Avicola Montalbino" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/decom blu.png" alt="Decom Srl" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/Gruppo Forte Originale.png" alt="Gruppo Forte" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/L'aquila nero.png" alt="L'Aquila" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/bccbianco_compressed.png" alt="BCC Campania Centro" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/Nissolino.png" alt="Palestra Nissolino Vis Nova" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/Perrella bianco.png" alt="Perrella" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/imc cavi.jpg" alt="IMC Cavi" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/GrillHouse.png" alt="Grill House" loading="lazy"></div>
   </div>
 </section>
 
@@ -498,7 +600,7 @@
     <div>
       <div class="info-block">
         <h3>Dove siamo</h3>
-        <p>Piazza Renato Casalbore, Salerno (SA)</p>
+        <p>Stadio Donato Vestuti — Piazza Renato Casalbore, Salerno (SA)</p>
       </div>
       <div class="info-block">
         <h3>Contatti</h3>
@@ -507,8 +609,14 @@
       </div>
       <div class="info-block">
         <h3>Orari allenamenti</h3>
-        <p>Giovanili: Martedì, Giovedì e Venerdì 19:00 — 20:30</p> 
+        <p>Giovanili: Martedì, Giovedì e Venerdì 19:00 — 20:30</p>
         <p>Seniores: Martedì, Giovedì e Venerdì 20:30 — 22:00</p>
+      </div>
+      <div class="info-block">
+        <h3>Seguici</h3>
+        <p><a href="https://www.facebook.com/arechirugby/" target="_blank" rel="noopener">Facebook</a></p>
+        <p><a href="https://www.instagram.com/arechirugby/" target="_blank" rel="noopener">Instagram</a></p>
+        <p><a href="https://www.tiktok.com/@arechirugby" target="_blank" rel="noopener">TikTok</a></p>
       </div>
     </div>
     <form action="https://formspree.io/f/mdaqdoyn" method="POST">
@@ -536,9 +644,9 @@
     <span>Arechi Rugby A.S.D.</span>
   </div>
   <div class="social-row">
-    <a href="#" aria-label="Instagram">IG</a>
-    <a href="#" aria-label="Facebook">FB</a>
-    <a href="#" aria-label="YouTube">YT</a>
+    <a href="https://www.facebook.com/arechirugby/" aria-label="Facebook" target="_blank" rel="noopener">FB</a>
+    <a href="https://www.instagram.com/arechirugby/" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+    <a href="https://www.tiktok.com/@arechirugby" aria-label="TikTok" target="_blank" rel="noopener">TT</a>
   </div>
   <p>© 2026 Arechi Rugby A.S.D. — Salerno. Tutti i diritti riservati.</p>
   <p>P.IVA IT05078330650 — Sede legale: Corso Garibaldi 103, 84123 Salerno (SA)</p>
