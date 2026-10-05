@@ -26,9 +26,7 @@
 <meta name="twitter:description" content="Squadra di rugby a Salerno, Serie C. Partite casalinghe allo Stadio Donato Vestuti.">
 <meta name="twitter:image" content="https://arechirugby.it/arechi-logo.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;900&family=UnifrakturCook:wght@700&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="fonts.css" rel="stylesheet">
 
 <script type="application/ld+json">
 {
@@ -317,6 +315,9 @@
   }
   form input:focus, form textarea:focus{border-color:var(--gold);outline:none;}
   form label{font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--stone);margin-bottom:-6px;}
+  .consent-row{display:flex;align-items:flex-start;gap:10px;}
+  .consent-row input{width:18px;height:18px;min-width:18px;margin-top:2px;accent-color:var(--gold);}
+  .consent-row label{font-size:.78rem;text-transform:none;letter-spacing:normal;color:var(--stone);line-height:1.45;margin-bottom:0;}
   form button{align-self:flex-start;}
   @media(max-width:860px){.contact-grid{grid-template-columns:1fr;}}
 
@@ -368,7 +369,7 @@
     <img src="arechi-logo.png" alt="Stemma Arechi Rugby" class="crest">
     <span class="eyebrow">Rugby a Salerno dal 2012</span>
     <h1>Arechi <span>Rugby</span></h1>
-    <p class="tagline">Dal cuore di Salerno, sotto le mura del principe. Le partite casalinghe si giocano allo Stadio Donato Vestuti.</p>
+    <p class="tagline">Dal cuore di Salerno, sotto le mura del principe.</p>
     <div class="cta-row">
       <a href="#contatti" class="btn btn-primary">Vieni a provare</a>
       <a href="#calendario" class="btn btn-ghost">Prossime partite</a>
@@ -398,8 +399,8 @@
     <div>
       <span class="eyebrow">Chi siamo</span>
       <h2>Il I XV della città di Salerno</h2>
-      <p>Arechi Rugby nasce nel 2012 a Salerno, quando un gruppo di appassionati under 25 si pone come obiettivo quello di portare un campionato nazionale sotto le mura del Castello che dà il nome al club. Da un manipolo di fondatori la società cresce rapidamente e, dopo appena 5 anni, riesce nell'intento di ottnere la prima, storica promozione in serie B per una squadra del capoluogo.</p>
-      <p>Nel 3 campionato nazionale rimarrano per un totale di 4 stagioni. Attualmente impegnati nel campionato di Serie C, i "Dragoni" continuano a portare in alto il nome della città, in attesa di tornare nelle categorie superiori.</p>
+      <p>Arechi Rugby nasce nel 2012 a Salerno, quando un gruppo di appassionati under 25 si pone come obiettivo quello di portare un campionato nazionale sotto le mura del Castello che dà il nome al club. Da un manipolo di fondatori la società cresce rapidamente e, dopo appena 5 anni, riesce nell'intento di ottenere la prima, storica promozione in serie B per una squadra del capoluogo.</p>
+      <p>Nel 3 campionato nazionale rimarrano per un totale di 4 stagioni. Attualmente impegnati nel campionato di Serie C, i "Dragoni" continuano a portare in alto il nome della città.</p>
       <ul class="fact-list">
         <li><strong>2012</strong><span>Anno di fondazione</span></li>
         <li><strong>3</strong><span>Squadre giovanili</span></li>
@@ -647,6 +648,10 @@
   <div>
     <label for="msg">Messaggio</label>
     <textarea id="msg" name="messaggio" rows="4"></textarea>
+  </div>
+  <div class="consent-row">
+    <input type="checkbox" id="consenso" name="consenso" required>
+    <label for="consenso">Acconsento al trattamento dei dati inseriti in questo modulo (nome, email, messaggio) da parte di Arechi Rugby A.S.D. al solo fine di rispondere alla mia richiesta, ai sensi del Regolamento UE 2016/679 (GDPR). I dati vengono trasmessi al servizio Formspree per la gestione dell'invio.</label>
   </div>
   <button type="submit" class="btn btn-primary">Invia richiesta</button>
 </form>
