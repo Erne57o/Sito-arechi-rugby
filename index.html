@@ -292,6 +292,7 @@
   .fixture-teams .team img{height:40px;width:auto;}
   .fixture-teams .team span{font-family:'Cinzel',serif;font-size:.82rem;line-height:1.25;}
   .fixture-teams .vs{color:var(--stone);font-family:'Barlow',sans-serif;font-size:.8rem;flex:0 0 auto;margin-top:12px;}
+  .fixture-teams .fixture-score{color:var(--gold);font-family:'Cinzel',serif;font-weight:700;font-size:1.05rem;flex:0 0 auto;margin-top:8px;white-space:nowrap;}
   .fixture-meta{text-align:center;color:var(--stone);font-family:'Barlow Condensed',sans-serif;font-size:.82rem;}
   .fixture-meta strong{color:var(--gold);font-weight:700;}
   .tag{
@@ -301,6 +302,18 @@
   .tag.casa{background:rgba(240,180,41,.15);color:var(--gold);}
   .tag.trasferta{background:rgba(44,90,160,.25);color:#8fb3e8;}
   .fixtures-counter{text-align:center;color:var(--stone-dark);font-size:.8rem;margin-top:10px;font-family:'Barlow Condensed',sans-serif;letter-spacing:.04em;}
+
+  /* classifica */
+  .standings-wrap{max-width:720px;margin:0 auto;overflow-x:auto;}
+  .standings{width:100%;border-collapse:collapse;font-family:'Barlow Condensed',sans-serif;font-size:.88rem;min-width:560px;}
+  .standings th,.standings td{padding:10px 8px;text-align:center;white-space:nowrap;}
+  .standings thead th{color:var(--gold);text-transform:uppercase;letter-spacing:.06em;font-size:.72rem;border-bottom:1px solid rgba(240,180,41,.3);}
+  .standings th.standings-team-h{text-align:left;}
+  .standings td.standings-team{text-align:left;display:flex;align-items:center;gap:8px;font-family:'Cinzel',serif;font-size:.85rem;white-space:normal;}
+  .standings td.standings-team img{height:22px;width:auto;flex:0 0 auto;}
+  .standings tbody tr{border-bottom:1px solid rgba(255,255,255,.06);}
+  .standings tbody tr.standings-arechi{background:rgba(240,180,41,.08);}
+  .standings td.standings-pt{color:var(--gold);font-weight:700;}
 
   /* news */
   .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:var(--maxw);margin:0 auto;}
@@ -377,6 +390,7 @@
         <li><a href="#chisiamo">Chi Siamo</a></li>
         <!-- <li><a href="#squadra">Squadra</a></li> temporarily hidden, see commented section below -->
         <li><a href="#calendario">Calendario</a></li>
+        <li><a href="#classifica">Classifica</a></li>
         <li><a href="#news">News</a></li>
         <li><a href="#sponsor">Sponsor</a></li>
         <li><a href="#contatti">Contatti</a></li>
@@ -493,100 +507,32 @@
   <div class="fixtures-wrap">
     <button class="fx-nav fx-prev" id="fxPrev" aria-label="Partita precedente">‹</button>
     <div class="fixtures" id="fixturesTrack" role="region" aria-roledescription="carousel" aria-label="Calendario partite" tabindex="0">
-      <article class="fixture away" role="group" aria-roledescription="slide" aria-label="Partita 1 di 10">
-        <div class="fixture-top"><span class="fixture-round">Giornata 1 — Andata</span><span class="tag trasferta">Trasferta</span></div>
-        <div class="fixture-teams">
-          <div class="team"><img class="crest-sm" src="Loghi/ASD HAMMERS RUGBY CAMPOBASSO.png" alt=""><span>Hammers Rugby Campobasso</span></div>
-          <span class="vs">vs</span>
-          <div class="team"><img class="crest-sm" src="arechi-logo.png" alt=""><span>Arechi Rugby</span></div>
-        </div>
-        <div class="fixture-meta"><strong>Domenica 18 Ottobre 2026</strong> · ore 15:30<br>Campo Ex Romagnoli, Campobasso</div>
-      </article>
-      <article class="fixture" role="group" aria-roledescription="slide" aria-label="Partita 2 di 10">
-        <div class="fixture-top"><span class="fixture-round">Giornata 2 — Andata</span><span class="tag casa">Casa</span></div>
-        <div class="fixture-teams">
-          <div class="team"><img class="crest-sm" src="arechi-logo.png" alt=""><span>Arechi Rugby</span></div>
-          <span class="vs">vs</span>
-          <div class="team"><img class="crest-sm" src="Loghi/RNA SSD A R.L.png" alt=""><span>RNA SSD a r.l.</span></div>
-        </div>
-        <div class="fixture-meta"><strong>Domenica 25 Ottobre 2026</strong> · ore 14:30<br>Stadio Donato Vestuti, Salerno</div>
-      </article>
-      <article class="fixture away" role="group" aria-roledescription="slide" aria-label="Partita 3 di 10">
-        <div class="fixture-top"><span class="fixture-round">Giornata 3 — Andata</span><span class="tag trasferta">Trasferta</span></div>
-        <div class="fixture-teams">
-          <div class="team"><img class="crest-sm" src="Loghi/RUGBY CLAN S. MARIA C.V. ASD.png" alt=""><span>Rugby Clan S. Maria C.V.</span></div>
-          <span class="vs">vs</span>
-          <div class="team"><img class="crest-sm" src="arechi-logo.png" alt=""><span>Arechi Rugby</span></div>
-        </div>
-        <div class="fixture-meta"><strong>Domenica 8 Novembre 2026</strong> · ore 14:30<br>Campo F. Casino, Santa Maria C.V. (CE)</div>
-      </article>
-      <article class="fixture" role="group" aria-roledescription="slide" aria-label="Partita 4 di 10">
-        <div class="fixture-top"><span class="fixture-round">Giornata 4 — Andata</span><span class="tag casa">Casa</span></div>
-        <div class="fixture-teams">
-          <div class="team"><img class="crest-sm" src="arechi-logo.png" alt=""><span>Arechi Rugby</span></div>
-          <span class="vs">vs</span>
-          <div class="team"><img class="crest-sm" src="Loghi/ASD RUGBY COSENZA.png" alt=""><span>Rugby Cosenza</span></div>
-        </div>
-        <div class="fixture-meta"><strong>Domenica 15 Novembre 2026</strong> · ore 14:30<br>Stadio Donato Vestuti, Salerno</div>
-      </article>
-      <article class="fixture away" role="group" aria-roledescription="slide" aria-label="Partita 5 di 10">
-        <div class="fixture-top"><span class="fixture-round">Giornata 5 — Andata</span><span class="tag trasferta">Trasferta</span></div>
-        <div class="fixture-teams">
-          <div class="team"><img class="crest-sm" src="Loghi/Salerno Rugby.png" alt=""><span>Associazione Sportiva Salerno Rugby</span></div>
-          <span class="vs">vs</span>
-          <div class="team"><img class="crest-sm" src="arechi-logo.png" alt=""><span>Arechi Rugby</span></div>
-        </div>
-        <div class="fixture-meta"><strong>Domenica 29 Novembre 2026</strong> · ore 14:30<br>Campo Margiotta &amp; Minelli, Mercato S. Severino (SA)</div>
-      </article>
-      <article class="fixture" role="group" aria-roledescription="slide" aria-label="Partita 6 di 10">
-        <div class="fixture-top"><span class="fixture-round">Giornata 1 — Ritorno</span><span class="tag casa">Casa</span></div>
-        <div class="fixture-teams">
-          <div class="team"><img class="crest-sm" src="arechi-logo.png" alt=""><span>Arechi Rugby</span></div>
-          <span class="vs">vs</span>
-          <div class="team"><img class="crest-sm" src="Loghi/ASD HAMMERS RUGBY CAMPOBASSO.png" alt=""><span>Hammers Rugby Campobasso</span></div>
-        </div>
-        <div class="fixture-meta"><strong>Domenica 13 Dicembre 2026</strong> · ore 14:30<br>Stadio Donato Vestuti, Salerno</div>
-      </article>
-      <article class="fixture away" role="group" aria-roledescription="slide" aria-label="Partita 7 di 10">
-        <div class="fixture-top"><span class="fixture-round">Giornata 2 — Ritorno</span><span class="tag trasferta">Trasferta</span></div>
-        <div class="fixture-teams">
-          <div class="team"><img class="crest-sm" src="Loghi/RNA SSD A R.L.png" alt=""><span>RNA SSD a r.l.</span></div>
-          <span class="vs">vs</span>
-          <div class="team"><img class="crest-sm" src="arechi-logo.png" alt=""><span>Arechi Rugby</span></div>
-        </div>
-        <div class="fixture-meta"><strong>Domenica 20 Dicembre 2026</strong> · ore 14:30<br>Villaggio del Rugby (ex NATO), Napoli</div>
-      </article>
-      <article class="fixture" role="group" aria-roledescription="slide" aria-label="Partita 8 di 10">
-        <div class="fixture-top"><span class="fixture-round">Giornata 3 — Ritorno</span><span class="tag casa">Casa</span></div>
-        <div class="fixture-teams">
-          <div class="team"><img class="crest-sm" src="arechi-logo.png" alt=""><span>Arechi Rugby</span></div>
-          <span class="vs">vs</span>
-          <div class="team"><img class="crest-sm" src="Loghi/RUGBY CLAN S. MARIA C.V. ASD.png" alt=""><span>Rugby Clan S. Maria C.V.</span></div>
-        </div>
-        <div class="fixture-meta"><strong>Domenica 10 Gennaio 2027</strong> · ore 14:30<br>Stadio Donato Vestuti, Salerno</div>
-      </article>
-      <article class="fixture away" role="group" aria-roledescription="slide" aria-label="Partita 9 di 10">
-        <div class="fixture-top"><span class="fixture-round">Giornata 4 — Ritorno</span><span class="tag trasferta">Trasferta</span></div>
-        <div class="fixture-teams">
-          <div class="team"><img class="crest-sm" src="Loghi/ASD RUGBY COSENZA.png" alt=""><span>Rugby Cosenza</span></div>
-          <span class="vs">vs</span>
-          <div class="team"><img class="crest-sm" src="arechi-logo.png" alt=""><span>Arechi Rugby</span></div>
-        </div>
-        <div class="fixture-meta"><strong>Domenica 17 Gennaio 2027</strong> · ore 14:30<br>Campo Mazzuca Marchesino, Rende (CS)</div>
-      </article>
-      <article class="fixture" role="group" aria-roledescription="slide" aria-label="Partita 10 di 10">
-        <div class="fixture-top"><span class="fixture-round">Giornata 5 — Ritorno</span><span class="tag casa">Casa</span></div>
-        <div class="fixture-teams">
-          <div class="team"><img class="crest-sm" src="arechi-logo.png" alt=""><span>Arechi Rugby</span></div>
-          <span class="vs">vs</span>
-          <div class="team"><img class="crest-sm" src="Loghi/Salerno Rugby.png" alt=""><span>Associazione Sportiva Salerno Rugby</span></div>
-        </div>
-        <div class="fixture-meta"><strong>Domenica 24 Gennaio 2027</strong> · ore 14:30<br>Stadio Donato Vestuti, Salerno</div>
-      </article>
     </div>
     <button class="fx-nav fx-next" id="fxNext" aria-label="Partita successiva">›</button>
   </div>
   <p class="fixtures-counter" id="fxCounter">1 / 10</p>
+</section>
+
+<section class="bg-navy2" id="classifica">
+  <div class="section-head">
+    <span class="eyebrow">Stagione 2026/27</span>
+    <h2>Classifica</h2>
+    <p>Girone unico a 6 squadre — aggiornata ad ogni giornata.</p>
+  </div>
+  <div class="standings-wrap">
+    <table class="standings">
+      <thead>
+        <tr>
+          <th class="standings-pos">#</th>
+          <th class="standings-team-h">Squadra</th>
+          <th>PG</th><th>V</th><th>N</th><th>P</th>
+          <th>PF</th><th>PS</th><th>Diff</th><th>Pt</th>
+        </tr>
+      </thead>
+      <tbody id="standingsBody"></tbody>
+    </table>
+  </div>
+  <p class="placeholder-note">4 punti vittoria, 2 pareggio, 0 sconfitta. Punti di bonus non ancora conteggiati.</p>
 </section>
 
 <svg class="battlement" viewBox="0 0 400 20" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -740,6 +686,93 @@
     tab.classList.add('active');
   }));
 
+  // Single source of truth for fixtures + results. To record a result once a
+  // match is played, just set that fixture's `result` to {home: X, away: Y} —
+  // the calendar card, the "next game" starting position, and the standings
+  // table all update from this one place.
+  const TEAMS = {
+    arechi:  { name: 'Arechi Rugby', logo: 'arechi-logo.png' },
+    hammers: { name: 'Hammers Rugby Campobasso', logo: 'Loghi/ASD HAMMERS RUGBY CAMPOBASSO.png' },
+    rna:     { name: 'RNA SSD a r.l.', logo: 'Loghi/RNA SSD A R.L.png' },
+    clan:    { name: 'Rugby Clan S. Maria C.V.', logo: 'Loghi/RUGBY CLAN S. MARIA C.V. ASD.png' },
+    cosenza: { name: 'Rugby Cosenza', logo: 'Loghi/ASD RUGBY COSENZA.png' },
+    salerno: { name: 'Associazione Sportiva Salerno Rugby', logo: 'Loghi/Salerno Rugby.png' }
+  };
+
+  const FIXTURES = [
+    { date: '2026-10-18', round: 'Giornata 1 — Andata', home: 'hammers', away: 'arechi', venue: 'Campo Ex Romagnoli, Campobasso', time: '15:30', result: null },
+    { date: '2026-10-25', round: 'Giornata 2 — Andata', home: 'arechi', away: 'rna', venue: 'Stadio Donato Vestuti, Salerno', time: '14:30', result: null },
+    { date: '2026-11-08', round: 'Giornata 3 — Andata', home: 'clan', away: 'arechi', venue: 'Campo F. Casino, Santa Maria C.V. (CE)', time: '14:30', result: null },
+    { date: '2026-11-15', round: 'Giornata 4 — Andata', home: 'arechi', away: 'cosenza', venue: 'Stadio Donato Vestuti, Salerno', time: '14:30', result: null },
+    { date: '2026-11-29', round: 'Giornata 5 — Andata', home: 'salerno', away: 'arechi', venue: 'Campo Margiotta &amp; Minelli, Mercato S. Severino (SA)', time: '14:30', result: null },
+    { date: '2026-12-13', round: 'Giornata 1 — Ritorno', home: 'arechi', away: 'hammers', venue: 'Stadio Donato Vestuti, Salerno', time: '14:30', result: null },
+    { date: '2026-12-20', round: 'Giornata 2 — Ritorno', home: 'rna', away: 'arechi', venue: 'Villaggio del Rugby (ex NATO), Napoli', time: '14:30', result: null },
+    { date: '2027-01-10', round: 'Giornata 3 — Ritorno', home: 'arechi', away: 'clan', venue: 'Stadio Donato Vestuti, Salerno', time: '14:30', result: null },
+    { date: '2027-01-17', round: 'Giornata 4 — Ritorno', home: 'cosenza', away: 'arechi', venue: 'Campo Mazzuca Marchesino, Rende (CS)', time: '14:30', result: null },
+    { date: '2027-01-24', round: 'Giornata 5 — Ritorno', home: 'arechi', away: 'salerno', venue: 'Stadio Donato Vestuti, Salerno', time: '14:30', result: null }
+  ];
+
+  function renderFixtures() {
+    const track = document.getElementById('fixturesTrack');
+    if (!track) return;
+    track.innerHTML = FIXTURES.map((fx, i) => {
+      const home = TEAMS[fx.home], away = TEAMS[fx.away];
+      const isArechiAway = fx.away === 'arechi';
+      const d = new Date(fx.date + 'T00:00:00');
+      let dateStr = d.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+      dateStr = dateStr.charAt(0).toUpperCase() + dateStr.slice(1);
+      const middle = fx.result
+        ? `<span class="fixture-score">${fx.result.home} – ${fx.result.away}</span>`
+        : `<span class="vs">vs</span>`;
+      const tag = isArechiAway
+        ? '<span class="tag trasferta">Trasferta</span>'
+        : '<span class="tag casa">Casa</span>';
+      return `<article class="fixture${isArechiAway ? ' away' : ''}" role="group" aria-roledescription="slide" aria-label="Partita ${i + 1} di ${FIXTURES.length}">
+        <div class="fixture-top"><span class="fixture-round">${fx.round}</span>${tag}</div>
+        <div class="fixture-teams">
+          <div class="team"><img class="crest-sm" src="${home.logo}" alt=""><span>${home.name}</span></div>
+          ${middle}
+          <div class="team"><img class="crest-sm" src="${away.logo}" alt=""><span>${away.name}</span></div>
+        </div>
+        <div class="fixture-meta"><strong>${dateStr}</strong> · ore ${fx.time}<br>${fx.venue}</div>
+      </article>`;
+    }).join('');
+  }
+
+  function computeStandings() {
+    const table = {};
+    Object.keys(TEAMS).forEach(key => {
+      table[key] = { key, name: TEAMS[key].name, logo: TEAMS[key].logo, pg: 0, v: 0, n: 0, p: 0, pf: 0, ps: 0, pt: 0 };
+    });
+    FIXTURES.forEach(fx => {
+      if (!fx.result) return;
+      const h = table[fx.home], a = table[fx.away];
+      h.pg++; a.pg++;
+      h.pf += fx.result.home; h.ps += fx.result.away;
+      a.pf += fx.result.away; a.ps += fx.result.home;
+      if (fx.result.home > fx.result.away) { h.v++; h.pt += 4; a.p++; }
+      else if (fx.result.home < fx.result.away) { a.v++; a.pt += 4; h.p++; }
+      else { h.n++; a.n++; h.pt += 2; a.pt += 2; }
+    });
+    return Object.values(table).sort((x, y) => y.pt - x.pt || (y.pf - y.ps) - (x.pf - x.ps) || y.pf - x.pf);
+  }
+
+  function renderStandings() {
+    const body = document.getElementById('standingsBody');
+    if (!body) return;
+    body.innerHTML = computeStandings().map((r, i) => `
+      <tr class="${r.key === 'arechi' ? 'standings-arechi' : ''}">
+        <td class="standings-pos">${i + 1}</td>
+        <td class="standings-team"><img src="${r.logo}" alt="">${r.name}</td>
+        <td>${r.pg}</td><td>${r.v}</td><td>${r.n}</td><td>${r.p}</td>
+        <td>${r.pf}</td><td>${r.ps}</td><td>${r.pf - r.ps}</td>
+        <td class="standings-pt">${r.pt}</td>
+      </tr>`).join('');
+  }
+
+  renderFixtures();
+  renderStandings();
+
   (function(){
     const track = document.getElementById('fixturesTrack');
     if (!track) return;
@@ -756,9 +789,9 @@
       if (nextBtn) nextBtn.disabled = active === cards.length - 1;
     }
 
-    function goTo(i) {
+    function goTo(i, instant) {
       const idx = Math.max(0, Math.min(cards.length - 1, i));
-      cards[idx].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      cards[idx].scrollIntoView({ behavior: instant ? 'instant' : 'smooth', inline: 'center', block: 'nearest' });
     }
 
     if (prevBtn) prevBtn.addEventListener('click', () => goTo(active - 1));
@@ -778,7 +811,12 @@
       if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(active - 1); }
     });
 
-    setActive(0);
+    // Land on the next unplayed fixture by default; users can still swipe
+    // back to see completed games and their results.
+    let nextIdx = FIXTURES.findIndex(fx => !fx.result);
+    if (nextIdx === -1) nextIdx = FIXTURES.length - 1;
+    setActive(nextIdx);
+    goTo(nextIdx, true);
   })();
 </script>
 
