@@ -323,6 +323,13 @@
   .news-date{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--red-crest);font-weight:700;}
   .news-body h3{font-family:'Cinzel',serif;font-size:1.05rem;margin:.4em 0;color:var(--parchment);}
   .news-body p{color:var(--stone);font-size:.92rem;margin:0;}
+  /* bottom-anchored crop keeps photographer credits (usually bottom corner) visible */
+  .news-thumb img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 100%;}
+  .news-more summary{cursor:pointer;color:var(--gold-soft);font-size:.85rem;font-weight:600;margin-top:.7em;list-style:none;}
+  .news-more summary::-webkit-details-marker{display:none;}
+  .news-more summary::after{content:' →';}
+  .news-more[open] summary{display:none;}
+  .news-more p{margin-top:.7em;}
   @media(max-width:860px){.news-grid{grid-template-columns:1fr;}}
 
   /* sponsor */
@@ -561,12 +568,17 @@
     <p>Ultime dal club.</p>
   </div>
   <div class="news-grid">
+    <!-- NEWS:START — newest first; cards are added here from Drive News/Da pubblicare -->
     <div class="news-card">
-      <div class="news-thumb"></div>
+      <div class="news-thumb"><img src="Foto/news/2026-10-15-inizia-il-campionato.jpg" alt="I giocatori della Prima Squadra dell'Arechi Rugby applaudono a fine partita" loading="lazy"></div>
       <div class="news-body">
-        <div class="news-date">Esempio — 10 Set 2026</div>
-        <h3>Aperti i tesseramenti 2026/27</h3>
-        <p>Da settembre riprendono gli allenamenti per tutte le categorie. Tesseramenti e rinnovi tramite piattaforma Golee. Vieni a provare!</p>
+        <div class="news-date">15 Ott 2026</div>
+        <h3>Inizia il campionato della Prima Squadra!</h3>
+        <p>Finalmente i Dragoni tornano in campo per un nuovo campionato, che li vede come una delle favorite al salto di categoria. I nostri però dovranno ovviamente dimostrarlo sul campo, e l’esoridio all’ex Romagnoli di Campobasso, che storicamente si è spesso rivelato ostico da espugnare per i ragazzi salernitani (qualcuno ricorderà un esotico 0-0 in un incontro di qualche anno fa), darà da subito un test importante per le ambizioni dell’Arechi.</p>
+        <details class="news-more">
+          <summary>Leggi tutto</summary>
+          <p>L’appuntamento è quindi alle 15:30 a Campobasso per Hammers – Arechi, tifando sempre per i nostri Dragoni!</p>
+        </details>
       </div>
     </div>
     <div class="news-card">
@@ -575,14 +587,6 @@
         <div class="news-date">3 Set 2026</div>
         <h3>Nuovo staff tecnico per la stagione</h3>
         <p>Presentato il nuovo staff che guiderà la prima squadra nel prossimo campionato.</p>
-      </div>
-    </div>
-    <div class="news-card">
-      <div class="news-thumb"></div>
-      <div class="news-body">
-        <div class="news-date">Esempio — 20 Ago 2026</div>
-        <h3>Ritiro estivo concluso</h3>
-        <p>Si chiude il ritiro pre-campionato: gruppo compatto e pronto alla nuova annata.</p>
       </div>
     </div>
   </div>
