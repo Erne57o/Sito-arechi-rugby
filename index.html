@@ -327,14 +327,21 @@
 
   /* sponsor */
   .sponsor-strip{
-    display:flex;justify-content:center;align-items:center;gap:40px;flex-wrap:wrap;
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px;
     max-width:var(--maxw);margin:0 auto;
   }
   .sponsor-slot{
     display:flex;align-items:center;justify-content:center;
+    background:#fff;border-radius:10px;height:104px;padding:14px 18px;
   }
+  /* for logos that only exist in a white version */
+  .sponsor-slot.dark{background:var(--navy-3);border:1px solid rgba(240,180,41,.25);}
   .sponsor-slot img{
-    max-height:72px;max-width:180px;width:auto;height:auto;object-fit:contain;
+    max-height:100%;max-width:100%;width:auto;height:auto;object-fit:contain;
+  }
+  @media(max-width:520px){
+    .sponsor-strip{grid-template-columns:repeat(2,1fr);gap:12px;}
+    .sponsor-slot{height:88px;padding:12px 14px;}
   }
 
   /* contatti */
@@ -587,14 +594,31 @@
     <p>I partner che sostengono il club.</p>
   </div>
   <div class="sponsor-strip">
-    <div class="sponsor-slot"><img src="Sponsor/Avicola Montalbino.png" alt="Avicola Montalbino" loading="lazy"></div>
-    <div class="sponsor-slot"><img src="Sponsor/decom blu.png" alt="Decom Srl" loading="lazy"></div>
-    <div class="sponsor-slot"><img src="Sponsor/Gruppo Forte Originale.png" alt="Gruppo Forte" loading="lazy"></div>
-    <div class="sponsor-slot"><img src="Sponsor/bccbianco_compressed.png" alt="BCC Campania Centro" loading="lazy"></div>
-    <div class="sponsor-slot"><img src="Sponsor/Nissolino.png" alt="Palestra Nissolino Vis Nova" loading="lazy"></div>
-    <div class="sponsor-slot"><img src="Sponsor/Perrella bianco.png" alt="Perrella" loading="lazy"></div>
-    <div class="sponsor-slot"><img src="Sponsor/imc cavi.jpg" alt="IMC Cavi" loading="lazy"></div>
-    <div class="sponsor-slot"><img src="Sponsor/GrillHouse.png" alt="Grill House" loading="lazy"></div>
+    <!-- Order and list mirror the Drive folder Materiale Grafiche/Sponsor -->
+    <div class="sponsor-slot"><img src="Sponsor/approdo-resort.png" alt="Approdo Resort Thalasso SPA" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/cuochi-salernitani.png" alt="Associazione Cuochi Salernitani" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/avicola-montalbino.png" alt="Avicola Montalbino" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/bcc-campania-centro.png" alt="BCC Campania Centro" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/ponte-molinello.png" alt="Caseificio Ponte Molinello" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/centrale-latte-salerno.png" alt="Centrale del Latte di Salerno" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/decom.png" alt="DECOM Srl" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/diano-salumi.png" alt="Diano Salumi" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/edil-saba.png" alt="Edil Saba - BigMat" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/grill-house.png" alt="Grill House Salerno" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/gruppo-forte.png" alt="Gruppo Forte" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/il-barbiere.png" alt="Il Barbiere Tonino" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/imc-cavi.png" alt="IMC Cavi" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/la-doria.png" alt="La Doria" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/la-fiammante.png" alt="La Fiammante" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/nissolino.png" alt="Palestra Nissolino Vis Nova" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/oro-campania.png" alt="Oro Campania" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/panem-et-circenses.png" alt="Panificio Panem et Circenses" loading="lazy"></div>
+    <div class="sponsor-slot dark"><img src="Sponsor/perrella.png" alt="Perrella Distribuzione" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/rago-group.png" alt="Rago Group" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/iofotografo.png" alt="Scuola di Fotografia IoFotografo" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/accurso.png" alt="Antica Macelleria Accurso" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/consorzio-jonico.png" alt="Consorzio Jonico Ortofrutticoltori" loading="lazy"></div>
+    <div class="sponsor-slot"><img src="Sponsor/confagricoltura.png" alt="Confagricoltura Salerno" loading="lazy"></div>
   </div>
 </section>
 
