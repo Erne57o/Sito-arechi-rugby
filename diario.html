@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diario di stagione — Arechi Rugby</title>
+<meta name="description" content="Il racconto a puntate della stagione dell'Arechi Rugby, episodio dopo episodio.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://arechirugby.it/diario.html">
+<link rel="icon" type="image/png" href="arechi-logo.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Arechi Rugby">
+<meta property="og:locale" content="it_IT">
+<meta property="og:url" content="https://arechirugby.it/diario.html">
+<meta property="og:title" content="Diario di stagione — Arechi Rugby">
+<meta property="og:description" content="Il racconto a puntate della stagione dell'Arechi Rugby.">
+<meta property="og:image" content="https://arechirugby.it/arechi-logo.png">
+<link href="fonts.css" rel="stylesheet">
+<style>
+  :root{
+    --navy:#111c33;
+    --navy-2:#1c2c4d;
+    --navy-3:#233863;
+    --red-crest:#c41e3a;
+    --gold:#f0b429;
+    --gold-soft:#e4c977;
+    --parchment:#f2ecdd;
+    --ink:#0d1220;
+    --stone:#9aa4bd;
+    --stone-dark:#6b7592;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;background:var(--navy);color:var(--parchment);
+    font-family:'Barlow',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;
+  }
+  header{background:var(--navy-2);border-bottom:1px solid rgba(240,180,41,.2);padding:14px 24px;}
+  header a{display:inline-flex;align-items:center;gap:12px;color:var(--parchment);text-decoration:none;font-family:'Cinzel',serif;font-weight:700;}
+  header img{width:40px;height:40px;object-fit:contain;}
+  main{max-width:760px;margin:0 auto;padding:48px 24px 64px;}
+  .eyebrow{font-family:'UnifrakturCook',cursive;color:var(--red-crest);font-size:1.4rem;letter-spacing:.03em;}
+  h1,h2{font-family:'Cinzel',serif;letter-spacing:.02em;}
+  h1{font-size:clamp(1.8rem,5vw,2.5rem);color:var(--gold);margin:.1em 0 .2em;}
+  .intro{color:var(--stone);font-size:1.05rem;margin:0 0 2.5em;}
+  .episode{border-top:1px solid rgba(240,180,41,.2);padding:2.2em 0 .5em;}
+  .ep-meta{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--red-crest);font-weight:700;}
+  .episode h2{font-size:clamp(1.25rem,3.5vw,1.6rem);color:var(--parchment);margin:.3em 0 .7em;}
+  .episode figure{margin:0 0 1.2em;}
+  .episode img{display:block;width:100%;height:auto;border-radius:6px;}
+  .episode p{opacity:.92;margin:0 0 1em;}
+  .diario-empty{background:var(--navy-2);border-left:3px solid var(--gold);padding:16px 20px;border-radius:6px;color:var(--stone);}
+  a.back{display:inline-block;margin-top:2em;color:var(--gold-soft);text-decoration:none;}
+  footer{background:var(--ink);padding:28px 24px;text-align:center;color:var(--stone-dark);font-size:.82rem;}
+  footer p{margin:.3em 0;}
+  footer a{color:var(--gold-soft);}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="./"><img src="arechi-logo.png" alt="">Arechi Rugby</a>
+</header>
+
+<main>
+  <span class="eyebrow">Dietro le quinte</span>
+  <h1>Diario di stagione</h1>
+  <p class="intro">Il racconto della stagione 2026/27 dei Dragoni, episodio dopo episodio.</p>
+
+  <!-- DIARIO:EPISODES — story order (Episodio 1 first). Each episode:
+  <article class="episode" id="episodio-N">
+    <div class="ep-meta">Episodio N — D Mmm YYYY</div>
+    <h2>TITLE</h2>
+    <figure><img src="Foto/diario/episodio-N.jpg" alt="ALT" loading="lazy"></figure>
+    <p>…</p>
+  </article>
+  Remove the .diario-empty paragraph when publishing Episodio 1. -->
+  <p class="diario-empty">Il primo episodio è in arrivo. Torna presto a trovarci!</p>
+
+  <a class="back" href="./">← Torna al sito</a>
+</main>
+
+<footer>
+  <p>© 2026 Arechi Rugby A.S.D. — Salerno. Tutti i diritti riservati.</p>
+  <p><a href="privacy.html">Privacy e Cookie Policy</a> — Questo sito non utilizza cookie.</p>
+</footer>
+
+</body>
+</html>

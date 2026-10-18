@@ -332,6 +332,12 @@
   .news-more p{margin-top:.7em;}
   @media(max-width:860px){.news-grid{grid-template-columns:1fr;}}
 
+  /* diario */
+  .diario-teaser{max-width:760px;margin:0 auto;text-align:center;}
+  .diario-card{background:var(--navy-3);border-radius:var(--radius);border:1px solid rgba(240,180,41,.14);padding:22px 24px;margin-bottom:24px;text-align:left;}
+  .diario-card h3{font-family:'Cinzel',serif;font-size:1.15rem;margin:.4em 0;color:var(--parchment);}
+  .diario-card p{color:var(--stone);margin:0;}
+
   /* sponsor */
   .sponsor-strip{
     display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px;
@@ -407,6 +413,7 @@
         <li><a href="#calendario">Calendario</a></li>
         <li><a href="#classifica">Classifica</a></li>
         <li><a href="#news">News</a></li>
+        <li><a href="#diario">Diario</a></li>
         <li><a href="#sponsor">Sponsor</a></li>
         <li><a href="#contatti">Contatti</a></li>
       </ul>
@@ -589,6 +596,23 @@
         <p>Presentato il nuovo staff che guiderà la prima squadra nel prossimo campionato.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="bg-navy2" id="diario">
+  <div class="section-head">
+    <span class="eyebrow">Dietro le quinte</span>
+    <h2>Diario di stagione</h2>
+    <p>Il racconto della stagione dei Dragoni, episodio dopo episodio.</p>
+  </div>
+  <div class="diario-teaser">
+    <!-- DIARIO:LATEST — replace this card with the newest episode (link to diario.html#episodio-N) -->
+    <div class="diario-card">
+      <div class="news-date">In arrivo</div>
+      <h3>Il primo episodio è in arrivo</h3>
+      <p>Torna presto a trovarci per la prima puntata del diario.</p>
+    </div>
+    <a class="btn btn-ghost" href="diario.html">Leggi il diario</a>
   </div>
 </section>
 
