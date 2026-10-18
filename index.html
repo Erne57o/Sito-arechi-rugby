@@ -337,6 +337,11 @@
   .diario-card{background:var(--navy-3);border-radius:var(--radius);border:1px solid rgba(240,180,41,.14);padding:22px 24px;margin-bottom:24px;text-align:left;}
   .diario-card h3{font-family:'Cinzel',serif;font-size:1.15rem;margin:.4em 0;color:var(--parchment);}
   .diario-card p{color:var(--stone);margin:0;}
+  a.diario-card{display:block;color:inherit;text-decoration:none;transition:border-color .2s;}
+  a.diario-card:hover{border-color:rgba(240,180,41,.45);}
+  .diario-card.has-thumb{display:grid;grid-template-columns:110px 1fr;gap:20px;align-items:center;}
+  .diario-card.has-thumb img{width:100%;height:auto;border-radius:6px;display:block;}
+  @media (max-width:480px){.diario-card.has-thumb{grid-template-columns:80px 1fr;gap:14px;}}
 
   /* sponsor */
   .sponsor-strip{
@@ -607,11 +612,14 @@
   </div>
   <div class="diario-teaser">
     <!-- DIARIO:LATEST — replace this card with the newest episode (link to diario.html#episodio-N) -->
-    <div class="diario-card">
-      <div class="news-date">In arrivo</div>
-      <h3>Il primo episodio è in arrivo</h3>
-      <p>Torna presto a trovarci per la prima puntata del diario.</p>
-    </div>
+    <a class="diario-card has-thumb" href="diario.html#episodio-1">
+      <img src="Foto/diario/episodio-1.jpg" alt="" width="900" height="1600" loading="lazy">
+      <div>
+        <div class="news-date">Episodio 1 — 18 Ott 2026</div>
+        <h3>Domenica si inizia</h3>
+        <p>Venerdì sera, spogliatoi, ultimo allenamento prima della prima giornata di campionato. L’attesa, dicono, aumenta il desiderio.</p>
+      </div>
+    </a>
     <a class="btn btn-ghost" href="diario.html">Leggi il diario</a>
   </div>
 </section>
