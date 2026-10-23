@@ -752,17 +752,19 @@
   // match is played, just set that fixture's `result` to {home: X, away: Y} —
   // the calendar card, the "next game" starting position, and the standings
   // table all update from this one place.
+  // Listed in the federation's table order, so teams level on every
+  // tiebreaker appear in the same order as the official standings.
   const TEAMS = {
-    arechi:  { name: 'Arechi Rugby', logo: 'arechi-logo.png' },
     hammers: { name: 'Hammers Rugby Campobasso', logo: 'Loghi/ASD HAMMERS RUGBY CAMPOBASSO.png' },
-    rna:     { name: 'RNA SSD a r.l.', logo: 'Loghi/RNA SSD A R.L.png' },
+    arechi:  { name: 'Arechi Rugby', logo: 'arechi-logo.png' },
     clan:    { name: 'Rugby Clan S. Maria C.V.', logo: 'Loghi/RUGBY CLAN S. MARIA C.V. ASD.png' },
+    salerno: { name: 'Associazione Sportiva Salerno Rugby', logo: 'Loghi/Salerno Rugby.png' },
     cosenza: { name: 'Rugby Cosenza', logo: 'Loghi/ASD RUGBY COSENZA.png' },
-    salerno: { name: 'Associazione Sportiva Salerno Rugby', logo: 'Loghi/Salerno Rugby.png' }
+    rna:     { name: 'RNA SSD a r.l.', logo: 'Loghi/RNA SSD A R.L.png' }
   };
 
   const FIXTURES = [
-    { date: '2026-10-18', round: 'Giornata 1 — Andata', home: 'hammers', away: 'arechi', venue: 'Campo Ex Romagnoli, Campobasso', time: '15:30', result: null },
+    { date: '2026-10-18', round: 'Giornata 1 — Andata', home: 'hammers', away: 'arechi', venue: 'Campo Ex Romagnoli, Campobasso', time: '15:30', result: { home: 21, away: 21 } },
     { date: '2026-10-25', round: 'Giornata 2 — Andata', home: 'arechi', away: 'rna', venue: 'Stadio Donato Vestuti, Salerno', time: '14:30', result: null },
     { date: '2026-11-08', round: 'Giornata 3 — Andata', home: 'clan', away: 'arechi', venue: 'Campo F. Casino, Santa Maria C.V. (CE)', time: '14:30', result: null },
     { date: '2026-11-15', round: 'Giornata 4 — Andata', home: 'arechi', away: 'cosenza', venue: 'Stadio Donato Vestuti, Salerno', time: '14:30', result: null },
