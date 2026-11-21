@@ -544,7 +544,7 @@
   <div class="section-head">
     <span class="eyebrow">Stagione 2026/27</span>
     <h2>Classifica</h2>
-    <p>Girone unico a 6 squadre — aggiornata ad ogni giornata.</p>
+    <p>Girone unico a 5 squadre — aggiornata ad ogni giornata.</p>
   </div>
   <div class="standings-wrap">
     <table class="standings">
@@ -559,7 +559,7 @@
       <tbody id="standingsBody"></tbody>
     </table>
   </div>
-  <p class="placeholder-note">4 punti vittoria, 2 pareggio, 0 sconfitta. Punti di bonus non ancora conteggiati.</p>
+  <p class="placeholder-note">Classifica ufficiale FIR, punti di bonus inclusi (Comunicato C/04/GSR del 18/11/2026). Rugby Cosenza esclusa dal campionato: i suoi risultati sono stati annullati.</p>
 </section>
 
 <svg class="battlement" viewBox="0 0 400 20" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -748,32 +748,39 @@
     tab.classList.add('active');
   }));
 
-  // Single source of truth for fixtures + results. To record a result once a
-  // match is played, just set that fixture's `result` to {home: X, away: Y} —
-  // the calendar card, the "next game" starting position, and the standings
-  // table all update from this one place.
-  // Listed in the federation's table order, so teams level on every
-  // tiebreaker appear in the same order as the official standings.
+  // Calendar: to record an Arechi result, set that fixture's `result` to
+  // {home: X, away: Y}; a game that didn't take place gets `status` instead
+  // (e.g. 'Rinviata'). The carousel opens on the first fixture with neither.
+  //
+  // Standings: copied as-is from the latest FIR comunicato (STANDINGS below),
+  // since the official table includes bonus points and games between other
+  // teams that the calendar doesn't track.
   const TEAMS = {
     hammers: { name: 'Hammers Rugby Campobasso', logo: 'Loghi/ASD HAMMERS RUGBY CAMPOBASSO.png' },
     arechi:  { name: 'Arechi Rugby', logo: 'arechi-logo.png' },
     clan:    { name: 'Rugby Clan S. Maria C.V.', logo: 'Loghi/RUGBY CLAN S. MARIA C.V. ASD.png' },
     salerno: { name: 'Associazione Sportiva Salerno Rugby', logo: 'Loghi/Salerno Rugby.png' },
-    cosenza: { name: 'Rugby Cosenza', logo: 'Loghi/ASD RUGBY COSENZA.png' },
     rna:     { name: 'RNA SSD a r.l.', logo: 'Loghi/RNA SSD A R.L.png' }
   };
 
+  // Comunicato C/04/GSR, riunione del 18/11/2026 (after Giornata 4 — Andata).
+  // Rugby Cosenza was excluded from the championship (C/03/GSR) and its results removed.
+  const STANDINGS = [
+    { key: 'rna',     pt: 10, pg: 2, v: 2, n: 0, p: 0, pf: 150, ps: 15 },
+    { key: 'arechi',  pt: 7,  pg: 2, v: 1, n: 1, p: 0, pf: 88,  ps: 21 },
+    { key: 'hammers', pt: 7,  pg: 2, v: 1, n: 1, p: 0, pf: 75,  ps: 28 },
+    { key: 'clan',    pt: 5,  pg: 3, v: 1, n: 0, p: 2, pf: 41,  ps: 142 },
+    { key: 'salerno', pt: 0,  pg: 3, v: 0, n: 0, p: 3, pf: 25,  ps: 173 }
+  ];
+
   const FIXTURES = [
     { date: '2026-10-18', round: 'Giornata 1 — Andata', home: 'hammers', away: 'arechi', venue: 'Campo Ex Romagnoli, Campobasso', time: '15:30', result: { home: 21, away: 21 } },
-    { date: '2026-10-25', round: 'Giornata 2 — Andata', home: 'arechi', away: 'rna', venue: 'Stadio Donato Vestuti, Salerno', time: '14:30', result: null },
-    { date: '2026-11-08', round: 'Giornata 3 — Andata', home: 'clan', away: 'arechi', venue: 'Campo F. Casino, Santa Maria C.V. (CE)', time: '14:30', result: null },
-    { date: '2026-11-15', round: 'Giornata 4 — Andata', home: 'arechi', away: 'cosenza', venue: 'Stadio Donato Vestuti, Salerno', time: '14:30', result: null },
+    { date: '2026-10-25', round: 'Giornata 2 — Andata', home: 'arechi', away: 'rna', venue: 'Stadio Donato Vestuti, Salerno', time: '14:30', result: null, status: 'Rinviata' },
+    { date: '2026-11-08', round: 'Giornata 3 — Andata', home: 'clan', away: 'arechi', venue: 'Campo F. Casino, Santa Maria C.V. (CE)', time: '14:30', result: { home: 0, away: 67 } },
     { date: '2026-11-29', round: 'Giornata 5 — Andata', home: 'salerno', away: 'arechi', venue: 'Campo Margiotta &amp; Minelli, Mercato S. Severino (SA)', time: '14:30', result: null },
     { date: '2026-12-13', round: 'Giornata 1 — Ritorno', home: 'arechi', away: 'hammers', venue: 'Stadio Donato Vestuti, Salerno', time: '14:30', result: null },
     { date: '2026-12-20', round: 'Giornata 2 — Ritorno', home: 'rna', away: 'arechi', venue: 'Villaggio del Rugby (ex NATO), Napoli', time: '14:30', result: null },
-    { date: '2027-01-10', round: 'Giornata 3 — Ritorno', home: 'arechi', away: 'clan', venue: 'Stadio Donato Vestuti, Salerno', time: '14:30', result: null },
-    { date: '2027-01-17', round: 'Giornata 4 — Ritorno', home: 'cosenza', away: 'arechi', venue: 'Campo Mazzuca Marchesino, Rende (CS)', time: '14:30', result: null },
-    { date: '2027-01-24', round: 'Giornata 5 — Ritorno', home: 'arechi', away: 'salerno', venue: 'Stadio Donato Vestuti, Salerno', time: '14:30', result: null }
+    { date: '2027-01-10', round: 'Giornata 3 — Ritorno', home: 'arechi', away: 'clan', venue: 'Stadio Donato Vestuti, Salerno', time: '14:30', result: null },    { date: '2027-01-24', round: 'Giornata 5 — Ritorno', home: 'arechi', away: 'salerno', venue: 'Stadio Donato Vestuti, Salerno', time: '14:30', result: null }
   ];
 
   function renderFixtures() {
@@ -787,7 +794,9 @@
       dateStr = dateStr.charAt(0).toUpperCase() + dateStr.slice(1);
       const middle = fx.result
         ? `<span class="fixture-score">${fx.result.home} – ${fx.result.away}</span>`
-        : `<span class="vs">vs</span>`;
+        : fx.status
+          ? `<span class="vs">${fx.status}</span>`
+          : `<span class="vs">vs</span>`;
       const tag = isArechiAway
         ? '<span class="tag trasferta">Trasferta</span>'
         : '<span class="tag casa">Casa</span>';
@@ -803,31 +812,13 @@
     }).join('');
   }
 
-  function computeStandings() {
-    const table = {};
-    Object.keys(TEAMS).forEach(key => {
-      table[key] = { key, name: TEAMS[key].name, logo: TEAMS[key].logo, pg: 0, v: 0, n: 0, p: 0, pf: 0, ps: 0, pt: 0 };
-    });
-    FIXTURES.forEach(fx => {
-      if (!fx.result) return;
-      const h = table[fx.home], a = table[fx.away];
-      h.pg++; a.pg++;
-      h.pf += fx.result.home; h.ps += fx.result.away;
-      a.pf += fx.result.away; a.ps += fx.result.home;
-      if (fx.result.home > fx.result.away) { h.v++; h.pt += 4; a.p++; }
-      else if (fx.result.home < fx.result.away) { a.v++; a.pt += 4; h.p++; }
-      else { h.n++; a.n++; h.pt += 2; a.pt += 2; }
-    });
-    return Object.values(table).sort((x, y) => y.pt - x.pt || (y.pf - y.ps) - (x.pf - x.ps) || y.pf - x.pf);
-  }
-
   function renderStandings() {
     const body = document.getElementById('standingsBody');
     if (!body) return;
-    body.innerHTML = computeStandings().map((r, i) => `
+    body.innerHTML = STANDINGS.map((r, i) => `
       <tr class="${r.key === 'arechi' ? 'standings-arechi' : ''}">
         <td class="standings-pos">${i + 1}</td>
-        <td class="standings-team"><img src="${r.logo}" alt="">${r.name}</td>
+        <td class="standings-team"><img src="${TEAMS[r.key].logo}" alt="">${TEAMS[r.key].name}</td>
         <td>${r.pg}</td><td>${r.v}</td><td>${r.n}</td><td>${r.p}</td>
         <td>${r.pf}</td><td>${r.ps}</td><td>${r.pf - r.ps}</td>
         <td class="standings-pt">${r.pt}</td>
@@ -877,7 +868,7 @@
 
     // Land on the next unplayed fixture by default; users can still swipe
     // back to see completed games and their results.
-    let nextIdx = FIXTURES.findIndex(fx => !fx.result);
+    let nextIdx = FIXTURES.findIndex(fx => !fx.result && !fx.status);
     if (nextIdx === -1) nextIdx = FIXTURES.length - 1;
     setActive(nextIdx);
     goTo(nextIdx, true);
